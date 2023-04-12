@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="secn.css">
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="icon" href="images/tp.png">
+    <title>TempProvido</title>
+</head>
+
+<body>
+
+    <div class="main">
+
+        <input type="checkbox" id="chk">
+
+        <div class="signup">
+            <form action="insert3.php" method="post">
+                <label for="chk" class="sig">Sign up</label>
+
+                <div class="user-box">
+                    <input type="text" title="Enter Username" name="username" required>
+                    <label>Username</label>
+                </div>
+                <div class="user-box">
+                    <input type="text" title="Enter email" name="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="user-box">
+                    <input type="password" title="Enter password" name="password" required>
+                    <label>Password</label>
+                </div>
+
+                <button type="submit" name="submit">Sign up</button>
+            </form>
+        </div>
+
+        <div class="login">
+            <form action="insert2.php" method="post">
+                <label for="chk" class="log">Login</label>
+
+
+
+                <div class="user-box">
+
+                    <input type="text" title="Enter Username" name="username" required>
+
+                    <label>Username</label>
+
+                </div>
+
+                <div class="user-box">
+
+                    <input type="password" title="Enter password" name="password" required>
+
+                    <label>Password</label>
+
+                </div>
+                <button type="submit" name="submit" onclick="CheckPassword(document.form1.text1)">Login</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        function CheckPassword(inputtxt) {
+            var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+            if (inputtxt.value.match(passw)) {
+                alert('Correct, try another...')
+                return true;
+            } else {
+                alert('Wrong...!')
+                return false;
+            }
+        }
+    </script>
+</body>
+
+
+</html>
